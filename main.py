@@ -14,14 +14,25 @@ if os.path.exists(filePath):
 while True:
     message = input()
     
+    if settings.indentCommand in message:
+        messageText = message[3:]
+        logMessage = f'{now:%D %H:%M } - {messageText}'
+
+        with open(filePath, 'a') as file:
+            print(logMessage, file=file)
+            file.close()
+    else:
+        logMessage = f'{now:%D %H:%M }{message}'
+    
+        with open(filePath, 'a') as file:
+            print(logMessage, file=file)
+            file.close()
+
+
     if settings.changeFileNameCommand in message:                        #CHANGE FILE NAME
         command, newName = message.split()
     
 
-    logMessage = f'{now:%D %H:%M }{message}'
-
-    with open(filePath, 'a') as file:
-        print(logMessage, file=file)
-        file.close()
+       
 
     

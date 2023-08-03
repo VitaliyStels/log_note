@@ -1,4 +1,5 @@
-fileName = 'file'
+fileName = 'test'
 fileExtension = 'md'
 changeFileNameCommand = '!cn'
 changeFileExtensionCommand = '!ce'
+indentCommand = '!m'
